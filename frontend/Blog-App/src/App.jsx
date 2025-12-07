@@ -1,0 +1,35 @@
+import React from 'react'
+import Header from './components/Header'
+import{Routes,Route} from "react-router-dom"
+import Blog from './pages/Blog'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Userblog from './pages/Userblog'
+import Createblog from './pages/Createblog'
+import Updateblog from './pages/Updateblog'
+import Readblog from './pages/Readblog'
+import Footer from './components/Footer'
+import { Toaster } from 'react-hot-toast';
+
+
+const App = () => {
+  return (
+    <>    
+    <Header />
+    <Toaster />
+    <Routes>
+    <Route path='/' element = {<Blog/>} />
+    <Route path='/myblog' element = {<Userblog/>} />
+    <Route path='/createblog' element = {<Createblog/>} />
+    <Route path='/updateblog/:id' element = {<Updateblog/>} />
+    <Route path='/readblog/:id' element = {<Readblog/>} />
+    <Route path='/login' element = {<Login/>} />
+    <Route path='/register' element = {<Register/>} />
+    </Routes>
+    <Footer/>
+    </>
+
+  )
+}
+
+export default App
