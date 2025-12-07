@@ -7,7 +7,7 @@ const Blog = () => {
 
   const getAllBlogs = async() =>{
     try{
-      const {data} = await axios.get("http://localhost:5000/all-post")
+      const {data} = await axios.get("https://mern-blog-app-yz1w.onrender.com/all-post")
     if(data.success){
       setblogs(data.posts || [])
       console.log(data.posts || [])

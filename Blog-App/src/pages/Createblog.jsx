@@ -19,7 +19,7 @@ const Createblog = () => {
         e.preventDefault();
         
         try{
-            const {data} = await axios.post("http://localhost:5000/create-post",{title:inputs.title,content:inputs.content,image:inputs.image,user:id})
+            const {data} = await axios.post("https://mern-blog-app-yz1w.onrender.com/create-post",{title:inputs.title,content:inputs.content,image:inputs.image,user:id})
         if(data.success){
             navigate("/")
             toast.success("New Blog Created")

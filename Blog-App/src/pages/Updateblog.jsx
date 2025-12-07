@@ -37,7 +37,7 @@ const Updateblog = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault(); 
         try{
-            const {data} = await axios.put(`http://localhost:5000/update-post/${id}`,{title:inputs.title,content:inputs.content,image:inputs.image,})
+            const {data} = await axios.put(`https://mern-blog-app-yz1w.onrender.com/update-post/${id}`,{title:inputs.title,content:inputs.content,image:inputs.image,})
         if(data.success){
             toast.success("blog updated")
             navigate("/")

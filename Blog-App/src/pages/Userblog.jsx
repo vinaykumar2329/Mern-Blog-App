@@ -8,7 +8,7 @@ const Userblog = () => {
   const getUserBlogs = async() =>{
     try{
         const id = localStorage.getItem("userId")
-      const {data} = await axios.get(`http://localhost:5000/user-post/${id}`)
+      const {data} = await axios.get(`https://mern-blog-app-yz1w.onrender.com/user-post/${id}`)
     if(data.success){
       setuser(data.userBlog)
       setblogs(data.userBlog.posts)

@@ -17,7 +17,7 @@ const handleRead = () =>{
 
 const handleDelete = async() =>{
   try{
-    const {data} = await axios.delete(`http://localhost:5000/delete-post/${id}`)
+    const {data} = await axios.delete(`https://mern-blog-app-yz1w.onrender.com/delete-post/${id}`)
     if(data.success){
       alert("Blog Deleted")
       window.location.reload();
