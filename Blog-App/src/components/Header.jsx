@@ -19,7 +19,7 @@ const Header = () => {
         dispatch(authActions.logout())
         toast.success("logout successfully")
         navigate("/login")
-        localStorage.clear()
+        localStorage.removeItem("userId")
       }
       catch(err){
         console.log(err);
