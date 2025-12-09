@@ -25,17 +25,12 @@ const Register = () => {
         toast.success("registered succesfully")
         navigate("/login")
       }
-      else{
-        alert("all ready registered")
+      if(data.status === 401){
+        toast.error("user already registered with the email")
       }
     }
     catch(error){
-      if(error.response && error.response.status === 401){
-        toast.error("user already registered with the email")
-      }
-      else{
         console.log(error)
-      }
     }
   }
   return (
