@@ -10,7 +10,7 @@ const Updateblog = () => {
     const id = useParams().id
     const getBlog = async() =>{
         try{
-            const {data} = await axios.get(`http://localhost:5000/get-post/${id}`)
+            const {data} = await axios.get(`https://mern-blog-app-yz1w.onrender.com/get-post/${id}`)
             if(data.success){
                 setblog(data.post)
                 setinputs({
