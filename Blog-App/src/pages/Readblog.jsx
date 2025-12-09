@@ -38,8 +38,8 @@ const Readblog = () => {
       
       <div className='flex  justify-end mt-3'>
         <div>
-      <h1 className='text-2xl font-bold'>Written By - {user.username}</h1>
-      <h1 className='text-yellow-500 font-bold'>posted on - {
+      <h1 className='text-xl font-bold'>Written By - {user.username}</h1>
+      <h1 className='text-gray-500 font-bold text-1xl'>Posted on - {
         new Date(blog.createdAt).toLocaleDateString("en-IN",{
           day:"2-digit",
           month:"short",
