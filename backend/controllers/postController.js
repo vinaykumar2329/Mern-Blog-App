@@ -37,7 +37,7 @@ exports.createPostController = async (req,res) => {
 // Get All Post
 exports.getAllPost = async(req,res) =>{
     try{
-        const posts = await postModel.find({}).populate("user");
+        const posts = (await postModel.find({}).populate("user")).sort({createdAt:+1});
         if(posts.length>0){
             return res.status(200).send({
             success:true,

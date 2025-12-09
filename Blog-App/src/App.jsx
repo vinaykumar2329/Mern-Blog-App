@@ -14,9 +14,11 @@ import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
-    <>    
+    <> 
+    <div className='flex flex-col min-h-screen'>   
     <Header />
     <Toaster />
+    <main className='flex-1'>   
     <Routes>
     <Route path='/' element = {<Blog/>} />
     <Route path='/myblog' element = {<Userblog/>} />
@@ -26,7 +28,10 @@ const App = () => {
     <Route path='/login' element = {<Login/>} />
     <Route path='/register' element = {<Register/>} />
     </Routes>
+    </main>
+
     <Footer/>
+    </div>
     </>
 
   )

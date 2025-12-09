@@ -28,13 +28,11 @@ const Blog = () => {
     <h1 className='text-6xl font-bold text-slate-900' style = {{textShadow:"6px 4px 4px rgba(0,0,0,0.6)"}}>BLOGS...</h1>
     </div>
 
-    <div className='  flex gap-4 px-2 py-4 flex-wrap justify-center ")] bg-cover bg-center '>
-
-  
+    <div className='  flex gap-4 px-2 py-4 flex-wrap justify-center bg-cover bg-center '>
       {blogs.length === 0 ? ( 
         <h1>No Blogs</h1>
       ):(
-        blogs.map((blog)=>(
+        [...blogs].reverse().map((blog)=>(
         <Blogcard
          key={blog?._id}
         id = {blog?._id}
