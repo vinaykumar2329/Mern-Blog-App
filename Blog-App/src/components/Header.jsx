@@ -43,7 +43,6 @@ const Header = () => {
             <button onClick={handleLogout} className='hover:[text-shadow:0_0_8px_red,0_0_16px_red]'  >Logout</button>
             </>
             )}
-
         </div> 
         
     </div>
