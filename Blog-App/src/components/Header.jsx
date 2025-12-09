@@ -27,8 +27,8 @@ const Header = () => {
     }
   return (
     <>
-    <div className='flex justify-between w-full p-4 bg-slate-900 text-slate-100 shadow-2xl'>
-      <div className='px-4 font-bold text-xl w-full [text-shadow:0_0_8px_#aaffc3,0_0_16px_#aaffc3] '><Link to="/"><h1>BLOG APP</h1></Link></div>
+    <div className='flex justify-between p-4 bg-slate-900 text-slate-100 shadow-2xl'>
+      <div className='px-4 font-bold text-xl  [text-shadow:0_0_8px_#aaffc3,0_0_16px_#aaffc3] '><Link to="/"><h1>BLOG APP</h1></Link></div>
         <div className='flex gap-6 font-bold tracking-wider '>
             {!isLogin &&
                 (<>
