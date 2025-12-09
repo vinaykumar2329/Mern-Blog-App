@@ -41,7 +41,6 @@ const Header = () => {
             <Link to="/myblog"><button className='hover:[text-shadow:0_0_8px_#00ff00,0_0_16px_#00ff00]'>My Blog</button></Link>
             <Link to="/createblog"><button className='hover:[text-shadow:0_0_8px_#ffcc00,0_0_16px_#ffcc00] '>Create Blog</button></Link>
             <button onClick={handleLogout} className='hover:[text-shadow:0_0_8px_red,0_0_16px_red]'  >Logout</button>
-
             </>
             )}
 
