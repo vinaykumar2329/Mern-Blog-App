@@ -36,7 +36,7 @@ const Createblog = () => {
 
       <div className= 'w-[90%] max-w-xs border-4 border-white p-5 py-5 flex flex-col gap-3 rounded-md backdrop-blur-xs'>
       <h1 className='text-2xl mb-3'>CREATE POST</h1>
-      <form className='flex flex-col gap-3 w-full text-center' onSubmit={handleSubmit}>
+      <form className='flex flex-col gap-3 w-full text-start' onSubmit={handleSubmit}>
 
         <label htmlFor="title" className='font-bold'>Title</label>
         <input className='border-gray-500 border-2 px-3 py-2 rounded-2xl w-full'  type="text" name="title" value={inputs.title} onChange={handleChange} placeholder='Enter Title' />

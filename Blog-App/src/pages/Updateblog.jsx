@@ -64,7 +64,7 @@ const Updateblog = () => {
         <input className='border-gray-500 border-2 px-3 py-2 rounded-2xl w-full' type='url' name="image" value={inputs.image} onChange={handleChange} />
 
         <div className='flex justify-center'>
-        <button className='bg-emerald-400 p-2 w-50 text-amber-50' type='submit'>POST</button>
+        <button className='bg-slate-900 p-2 w-50 text-amber-50' type='submit'>POST</button>
         </div>
       </form>
       </div>
