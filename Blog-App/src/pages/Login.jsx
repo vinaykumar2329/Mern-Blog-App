@@ -7,7 +7,7 @@ import {authActions} from '../redux/store'
 import ReCAPTCHA from "react-google-recaptcha"
 
 
-const SITE_KEY="6LeXMycsAAAAAIhtpv40euliL0iy5E768MsW8Oku";
+const SITE_KEY="6LeLbCcsAAAAABpLofA_9OFcESwQDyJsuj5SHbOm";
 
 const Login = () => {
   const navigate =useNavigate();
