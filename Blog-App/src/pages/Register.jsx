@@ -29,8 +29,7 @@ const Register = () => {
         alert("plz fillcaptcha")
         return;
       }
-    try{
-      
+    try{ 
       const {data} = await axios.post("https://mern-blog-app-yz1w.onrender.com/register",{username:inputs.username,email:inputs.email,password:inputs.password,captcha})
       
       if(data.success){
