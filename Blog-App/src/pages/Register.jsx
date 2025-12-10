@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import { redirect, useNavigate } from 'react-router-dom'
 import axios from "axios"
 import toast from 'react-hot-toast';
+import ReCAPTCHA from "react-google-recaptcha"
+
+
+const SITE_KEY="6LeXMycsAAAAAIhtpv40euliL0iy5E768MsW8Oku";
+
 const Register = () => {
   const navigate =useNavigate();
- 
-
+  const [captcha, setcaptcha] = useState(null)
   const [inputs, setinputs] = useState({
     username:"",
     email:"",
     password:"",
   })
+
+  const handleCaptchaChange = value => setcaptcha(value)
 
   const handleChange = (e) =>{
     setinputs(prev =>({ ...prev,
@@ -19,8 +25,13 @@ const Register = () => {
   }
   const handleSubmit = async(e) =>{
     e.preventDefault();
+    if(!captcha){
+        alert("plz fillcaptcha")
+        return;
+      }
     try{
-      const {data} = await axios.post("https://mern-blog-app-yz1w.onrender.com/register",{username:inputs.username,email:inputs.email,password:inputs.password})
+      const {data} = await axios.post("https://mern-blog-app-yz1w.onrender.com/register",{username:inputs.username,email:inputs.email,password:inputs.password,captcha})
+      
       if(data.success){
         toast.success("registered succesfully")
         navigate("/login")
@@ -46,7 +57,12 @@ const Register = () => {
         <input className='border-gray-500 border-2 px-3 py-2 rounded-2xl w-full'  type="email" name="email" value={inputs.email} onChange={handleChange} placeholder='Enter Your Email'/>
         <label htmlFor="password" className='font-bold'>Password</label>
         <input className='border-gray-500 border-2 px-3 py-2 rounded-2xl w-full'  type="password" name="password" value={inputs.password} onChange={handleChange} placeholder='Enter Your Password' />
-        <div className='flex justify-center'>
+        
+        <div className='flex flex-col justify-center items-center'>
+          <ReCAPTCHA
+        sitekey={SITE_KEY}
+        onChange={handleCaptchaChange}
+        />
         <button className='bg-slate-900 p-2 w-50 text-amber-50 mt-6 rounded-md' type='submit'>REGISTER</button>
         </div>
       </form>

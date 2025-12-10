@@ -1,18 +1,35 @@
+const axios = require("axios")
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 
 
 exports.registerController = async(req,res) =>{
     try{
-        const {username,email,password} = req.body;
+        const {username,email,password,captcha} = req.body;
         // validation
-        if(!username || !email || !password){
+        if(!username || !email || !password ){
             return res.status(400).send({
                 success:false,
                 message:"plz fill all the fields"
             })
         }
-        
+
+        //Captcha
+        if(!captcha){
+            return res.status(400).send({
+                success:false,
+                message:"Captcha missing"
+            })
+        }
+        const secretKey = process.env.CAPTCHA_SECRET_KEY;
+        const verifyUrl  = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`
+        const {data} = await axios.post(verifyUrl);
+        if(!data.sucess){
+            return res.status(400).json({
+                success:false,
+                message:"captcha failed"})
+        }
+
         // existing user
         const existingUser = await userModel.findOne({email})
         if(existingUser){
@@ -56,7 +73,7 @@ exports.getAllUser = async(req,res) =>{
 
 exports.loginController = async(req,res) =>{
     try{
-        const{email,password} = req.body
+        const{email,password,captcha} = req.body
         // validation
         if(!email || !password){
             return res.status(400).send({
@@ -64,7 +81,22 @@ exports.loginController = async(req,res) =>{
                 message:"plz fill all the fields"
             })
         }
-        
+
+        // captcha
+        if(!captcha){
+            return res.status(400).send({
+                success:false,
+                message:"Captcha missing"
+            })
+        }
+        const secretKey = process.env.CAPTCHA_SECRET_KEY;
+        const verifyUrl  =`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`
+        const {data} = await axios.post(verifyUrl);
+        if(!data.sucess){
+            return res.status(400).json({
+                success:false,
+                message:"captcha failed"})
+        }
         // existing user
         const user = await userModel.findOne({email})
         if(!user){

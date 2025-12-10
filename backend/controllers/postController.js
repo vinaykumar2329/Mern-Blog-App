@@ -131,7 +131,6 @@ exports.deletePostController = async(req,res) => {
             error
         })
     }
-
 }
 
 exports.userPostController = async(req,res) => {
@@ -158,6 +157,5 @@ exports.userPostController = async(req,res) => {
             error
         })
     }
-
 }
 
