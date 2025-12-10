@@ -44,8 +44,11 @@ const Login = () => {
 
     }
     catch(error){
-      if(error.response.status === 401 || error.response.status === 402 ){
+      if(error.response.status === 401 ){
         toast.error("Invalid Credentials")
+      }
+      if(error.response.status === 402 ){
+        toast.error("User not registered")
       }
       console.log(error)
     }
