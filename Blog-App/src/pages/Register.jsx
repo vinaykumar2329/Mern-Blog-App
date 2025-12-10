@@ -5,11 +5,11 @@ import toast from 'react-hot-toast';
 import ReCAPTCHA from "react-google-recaptcha"
 
 
-const SITE_KEY="6LeLbCcsAAAAABpLofA_9OFcESwQDyJsuj5SHbOm";
+const SITE_KEY="6Le7fScsAAAAAJgw6K6_5PJosd6QjRmG_CxU8WHx";
 
 const Register = () => {
   const navigate =useNavigate();
-  const [captcha, setcaptcha] = useState(null)
+  const [captcha, setcaptcha] = useState("")
   const [inputs, setinputs] = useState({
     username:"",
     email:"",
@@ -30,6 +30,7 @@ const Register = () => {
         return;
       }
     try{
+      
       const {data} = await axios.post("https://mern-blog-app-yz1w.onrender.com/register",{username:inputs.username,email:inputs.email,password:inputs.password,captcha})
       
       if(data.success){

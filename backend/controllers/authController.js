@@ -24,7 +24,8 @@ exports.registerController = async(req,res) =>{
         const secretKey = process.env.CAPTCHA_SECRET_KEY;
         const verifyUrl  = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`
         const {data} = await axios.post(verifyUrl);
-        if(!data.sucess){
+        console.log("captcha data:",data)
+        if(!data.success){
             return res.status(400).json({
                 success:false,
                 message:"captcha failed"})
@@ -92,7 +93,7 @@ exports.loginController = async(req,res) =>{
         const secretKey = process.env.CAPTCHA_SECRET_KEY;
         const verifyUrl  =`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`
         const {data} = await axios.post(verifyUrl);
-        if(!data.sucess){
+        if(!data.success){
             return res.status(400).json({
                 success:false,
                 message:"captcha failed"})
