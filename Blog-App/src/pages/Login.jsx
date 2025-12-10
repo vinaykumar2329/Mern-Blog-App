@@ -55,7 +55,7 @@ const Login = () => {
   }
   return (
     <div className='text-center min-h-screen w-full flex flex-col  justify-center items-center gap-3 bg-[url("https://plus.unsplash.com/premium_photo-1674834298045-e405bc99076b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2xvdWR8ZW58MHx8MHx8fDA%3D")] bg-cover bg-center'>
-      <div className='w-[100%] max-w-xs border-4  border-white p-5 py-6 flex flex-col gap-3 rounded-md backdrop-blur-xs '>
+      <div className='w-[90%] max-w-xs border-4  border-white p-5 py-6 flex flex-col gap-3 rounded-md backdrop-blur-xs '>
 
       <h1 className='text-2xl mb-10'>Login</h1>
       <form className='flex flex-col gap-2 w-full  text-start ' onSubmit={handleSubmit}>
