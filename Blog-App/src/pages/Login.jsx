@@ -44,7 +44,7 @@ const Login = () => {
 
     }
     catch(error){
-      if(error.response.status === 201){
+      if(error.response.status === 401 || error.response.status === 201 ){
         toast.error("Invalid Credentials")
       }
       console.log(error)
