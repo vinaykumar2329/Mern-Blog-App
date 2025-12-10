@@ -101,7 +101,7 @@ exports.loginController = async(req,res) =>{
         // existing user
         const user = await userModel.findOne({email})
         if(!user){
-            return res.status(201).send({
+            return res.status(402).send({
                 success:false,
                 message:"user not registered"
             })
