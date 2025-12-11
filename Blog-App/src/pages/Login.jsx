@@ -59,10 +59,13 @@ const Login = () => {
 
       <h1 className='text-2xl mb-10'>Login</h1>
       <form className='flex flex-col gap-2 w-full  text-start ' onSubmit={handleSubmit}>
+
         <label htmlFor="email" className='font-bold'>Email</label>
         <input className='border-gray-500 border-2 px-3 py-2 rounded-2xl w-full'  type="email" name="email" value={inputs.email} onChange={handleChange} placeholder='Enter Your Email' />
+
         <label htmlFor="password" className='font-bold'>Password</label>
         <input className='border-gray-500 border-2  px-3 py-2 rounded-2xl w-full'  type="password" name="password" value={inputs.password} onChange={handleChange} placeholder='Enter Your Password' />
+        
         <div className='flex flex-col justify-center items-center'>
            <ReCAPTCHA
                   sitekey={SITE_KEY}
