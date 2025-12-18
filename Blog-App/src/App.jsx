@@ -10,12 +10,14 @@ import Updateblog from './pages/Updateblog'
 import Readblog from './pages/Readblog'
 import Footer from './components/Footer'
 import { Toaster } from 'react-hot-toast';
+import Snowfall from 'react-snowfall'
 
 
 const App = () => {
   return (
     <> 
-    <div className='flex flex-col min-h-screen'>   
+    <div className='flex flex-col min-h-screen'> 
+    <Snowfall color='#82C3D9'/>  
     <Header />
     <Toaster />
     <main className='flex-1'>   
