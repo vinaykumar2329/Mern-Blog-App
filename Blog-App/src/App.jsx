@@ -16,8 +16,9 @@ import Snowfall from 'react-snowfall'
 const App = () => {
   return (
     <> 
-    <div className='flex flex-col min-h-screen'> 
-    <Snowfall color='#82C3D9'>  
+
+    <div className='flex flex-col min-h-screen relative'> 
+    <Snowfall color='#82C3D9'/>  
     <Header />
     <Toaster />
     <main className='flex-1'>   
@@ -32,7 +33,6 @@ const App = () => {
     </Routes>
     </main>
     <Footer/>
-    </Snowfall>
     </div>
     </>
 
