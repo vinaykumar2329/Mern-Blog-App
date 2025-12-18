@@ -17,7 +17,7 @@ const App = () => {
   return (
     <> 
     <div className='flex flex-col min-h-screen'> 
-    <Snowfall color='#82C3D9'/>  
+    <Snowfall color='#82C3D9'>  
     <Header />
     <Toaster />
     <main className='flex-1'>   
@@ -31,8 +31,8 @@ const App = () => {
     <Route path='/register' element = {<Register/>} />
     </Routes>
     </main>
-
     <Footer/>
+    </Snowfall>
     </div>
     </>
 
