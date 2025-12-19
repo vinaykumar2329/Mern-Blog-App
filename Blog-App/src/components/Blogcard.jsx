@@ -1,12 +1,12 @@
 import axios from 'axios';
-import React from 'react'
+import React, { memo } from 'react'
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 
-const Blogcard = ({title,content,image,username,time,id,isUser}) => {
+const Blogcard = memo(({title,content,image,username,time,id,isUser}) => {
   const navigate = useNavigate();
 const handleEdit = () =>{
   navigate(`/updateblog/${id}`)
@@ -63,7 +63,7 @@ const firstLetter = typeof username === "string" && username.length>0 ? username
       </div>
       
       <div className='w-full h-50 overflow-hidden '>
-       <img src={image} alt="" className=' w-full h-full object-cover rounded-2xl' />
+       <img src={image} alt="" loading='lazy' className=' w-full h-full object-cover rounded-2xl' />
     </div>
       <div className='px-5'> 
         <h2 className='font-extrabold'>{title}</h2>
@@ -72,6 +72,6 @@ const firstLetter = typeof username === "string" && username.length>0 ? username
       </div>
     </div>
   )
-}
+})
 
 export default Blogcard

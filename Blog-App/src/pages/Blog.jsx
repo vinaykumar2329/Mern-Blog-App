@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Blogcard from '../components/Blogcard'
 import axios from 'axios'
 
@@ -21,7 +21,10 @@ const Blog = () => {
   useEffect(() => {
   getAllBlogs();
   }, [])
-  
+
+  const reversedBlogs = useMemo(()=>{
+    return [...blogs].reverse()
+  },[blogs]) 
   return (
     <>
     <div className='flex flex-col items-center justify-center h-[50vh] bg-[url("https://images.unsplash.com/photo-1617713964959-d9a36bbc7b52?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D")]  bg-contain'>
@@ -32,7 +35,7 @@ const Blog = () => {
       {blogs.length === 0 ? ( 
         <h1>No Blogs</h1>
       ):(
-        [...blogs].reverse().map((blog)=>(
+        reversedBlogs.map((blog)=>(
         <Blogcard
          key={blog?._id}
         id = {blog?._id}
